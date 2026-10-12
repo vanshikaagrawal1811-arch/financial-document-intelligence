@@ -1,80 +1,104 @@
 # Financial Document Intelligence
 
-An AI-assisted **personal-loan income verification** prototype for a fictional Indian retail bank. It helps a loan-operations analyst compare a salaried applicant's payslips with salary-like credits in their bank statement over multiple months, identify exceptions, and prepare a review report.
+An AI-assisted **personal-loan income verification prototype** for a fictional Indian retail bank. The application helps a loan-operations analyst compare a salaried applicant's payslips with salary-like credits in bank statements across multiple months, identify exceptions, and generate a verification report.
 
-> This is a portfolio simulation, not a product deployed by a real bank. It does not approve/decline loans or establish fraud. Use synthetic or properly authorized documents only.
+> **Portfolio project:** This is a demonstration prototype, not a product deployed by a real bank. It does not approve or reject loans and cannot establish fraud. Use synthetic or properly authorized documents only.
 
 ## Business problem
 
-Loan operations teams may need to manually inspect multiple payslips and bank statement pages to confirm that declared monthly net salary is consistent with credits received. This prototype automates the initial extraction and comparison so reviewers can focus on exceptions.
+Loan-operations teams may need to inspect multiple payslips and bank-statement pages to assess whether declared monthly net salary is consistent with credits received. Manual checks can be time-consuming and inconsistencies may be overlooked. This project automates the initial extraction and comparison so a reviewer can focus on exceptions.
 
-## Core workflow
+## Workflow
 
-1. Upload up to three months (or more) of salary slips and bank statement PDFs/images.
-2. Extract text with PyMuPDF; use Tesseract OCR as a fallback for scanned PDFs and images.
-3. Classify documents and extract key salary fields and bank transaction rows.
-4. Infer each payslip's month and match it to salary-like bank credits in that month.
-5. Report matched months, differences, missing salary-like credits, and missing/invalid payslip fields.
-6. Run an exploratory Isolation Forest over bank transactions to surface statistical outliers for manual review.
-7. Export a verification report containing the extracted summary, reconciliation results, and transactions.
+1. Upload payslips and a bank statement covering multiple months.
+2. Extract document text using PyMuPDF; use Tesseract OCR as a fallback for scanned PDFs and images.
+3. Classify documents and extract relevant salary fields and bank-transaction rows.
+4. Infer the payslip month and match it to salary-like bank credits for that month.
+5. Compare net salary with identified credits and flag differences, missing credits, or missing/invalid payslip fields.
+6. Apply an exploratory Isolation Forest model to surface statistically unusual transactions for manual review.
+7. Review the results in the Streamlit interface and export a verification report.
 
-## What it checks
+## Key features
 
-- Payslip month, employee/employer labels, gross salary, deductions and net salary (where present in document text).
-- Salary-like credit matching by month using transaction descriptions containing terms such as `salary`, `payroll`, or `wage`.
-- Difference between the payslip's net salary and identified salary-like credits for the same month.
-- Potential transaction outliers, with the warning that an outlier is not evidence of fraud.
+- **Document extraction:** Reads text-based PDFs and supports OCR fallback for scanned documents and images.
+- **Payslip field extraction:** Looks for employee/employer labels, salary period, gross salary, deductions, and net salary when present in the document text.
+- **Multi-month reconciliation:** Compares payslip net salary with salary-like credits in the corresponding month.
+- **Exception reporting:** Highlights mismatches, missing salary-like credits, and incomplete or invalid payslip fields.
+- **Transaction anomaly detection:** Uses Isolation Forest to surface potential outliers for manual review.
+- **Report export:** Exports extracted summaries, reconciliation results, and transaction-level review signals.
+- **Synthetic sample documents:** Includes example payslips and bank statements for demonstrating the workflow without exposing real customer data.
 
-## Limitations
+## Example use case
 
-- Extraction is regex/template-based; documents with unfamiliar layouts may require parser updates or manual correction.
-- Matching depends on transaction descriptions. Banks and employers may use different narrations, split salary credits, or pay salary near month-end. Inspect exceptions rather than treating them as conclusions.
-- A month can only be reconciled if the payslip period and transaction dates are parsed correctly.
-- Isolation Forest is unsupervised and exploratory. Its flags are not fraud probabilities and can be unstable on small samples.
-- This prototype does not verify employer identity, document authenticity, credit bureau records, or loan eligibility. A human reviewer remains responsible for decisions.
-- OCR fallback requires the Tesseract system executable in addition to the Python package.
+The sample dataset includes three monthly payslips and a bank statement covering the same period. It intentionally includes a February salary discrepancy and a large one-time credit to demonstrate how the system can surface items for review.
 
-## Tech stack
+The system reports the difference and supporting details; it does **not** conclude that a discrepancy is fraud. A reviewer must investigate exceptions before making any decision.
 
-- Python, Streamlit
-- PyMuPDF and pytesseract/Pillow for text extraction and OCR
-- pandas and NumPy for tabular processing
-- scikit-learn Isolation Forest for exploratory anomaly detection
+## Technology stack
 
-## Run locally (Windows, macOS, Linux)
+- **Language:** Python
+- **Interface:** Streamlit
+- **PDF extraction:** PyMuPDF
+- **OCR:** pytesseract and Pillow, with the Tesseract system executable required for OCR fallback
+- **Data processing:** pandas and NumPy
+- **Anomaly detection:** scikit-learn Isolation Forest
 
-Python 3.10–3.12 recommended.
+## Run locally
+
+Python 3.10–3.12 is recommended.
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/vanshikaagrawal1811-arch/financial-document-intelligence.git
+cd financial-document-intelligence
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows (Command Prompt):**
+
+```cmd
 python -m venv .venv
-```
-
-Windows:
-```powershell
 .venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py
 ```
 
-macOS/Linux:
+**macOS/Linux:**
+
 ```bash
+python3 -m venv .venv
 source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+### 4. Start the application
+
+```bash
 streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit. Upload files from `sample_documents/salary/` and `sample_documents/bank/`. The `.txt` files are for reference; convert them to PDFs using:
+Open the local URL printed in the terminal by Streamlit.
+
+## Sample documents
+
+Sample documents are located in `sample_documents/`, with payslips in `sample_documents/salary/` and bank statements in `sample_documents/bank/`. Upload the PDF samples through the application. The accompanying `.txt` files are readable references; to regenerate PDFs from the text samples, run:
 
 ```bash
 python sample_documents/convert_to_pdf.py
 ```
 
-The script creates PDF versions beside each sample text file. The sample data is entirely fictional and intentionally includes a February salary mismatch and a one-time large credit to demonstrate review signals.
+The sample data is fictional and includes deliberate exceptions for demonstration purposes.
 
-## Suggested GitHub repository description
+## Limitations
 
-`AI-assisted multi-month salary verification for personal-loan applications using PDF/OCR extraction, bank-credit reconciliation, and exploratory anomaly detection.`
+- Extraction is regex/template-based; unfamiliar document layouts may require parser updates or manual correction.
+- Isolation Forest is unsupervised and exploratory. Its flags are not fraud probabilities and may be unstable on small datasets.
+- OCR fallback requires the Tesseract system executable in addition to the Python package.
+- Human review is required before acting on any discrepancy or anomaly.
 
-## Responsible-use note
-
-Do not upload real customer financial documents to a public repository or use real account data in screenshots. Keep credentials and private data out of Git. In production, add authentication, access controls, secure storage, retention/deletion policies, logging, and legal/compliance review before processing customer data.
