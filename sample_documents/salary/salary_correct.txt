@@ -1,0 +1,13 @@
+COMPANY: ABC Technologies
+SALARY SLIP - For the month of January 2026
+
+Employee Name: Rahul Sharma
+Employee ID: EMP1023
+
+Basic Salary: 40000
+HRA: 10000
+Bonus: 5000
+Gross Salary: 55000
+
+Deductions: 7000
+Net Salary: 48000

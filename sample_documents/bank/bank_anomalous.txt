@@ -1,0 +1,15 @@
+BANK STATEMENT
+Account Holder: Rahul Sharma
+Account Number: XXXXXXXX1234
+Statement Period: 01-Jan-2026 to 31-Jan-2026
+Opening Balance: 20000
+
+Date | Description | Amount | Type | Balance
+01-Jan-2026 | Salary Credit - ABC Technologies | 48000 | CREDIT | 68000
+03-Jan-2026 | Grocery Store Payment | 1200 | DEBIT | 66800
+05-Jan-2026 | Electricity Bill | 2000 | DEBIT | 64800
+08-Jan-2026 | Mobile Recharge | 500 | DEBIT | 64300
+10-Jan-2026 | Unknown Large Transfer | 500000 | DEBIT | -435700
+12-Jan-2026 | Restaurant Payment | 1500 | DEBIT | -437200
+15-Jan-2026 | Online Shopping | 3000 | DEBIT | -440200
+20-Jan-2026 | Fuel Payment | 1800 | DEBIT | -442000

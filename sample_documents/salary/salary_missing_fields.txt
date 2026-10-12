@@ -1,0 +1,10 @@
+COMPANY: XYZ Solutions
+SALARY SLIP - For the month of January 2026
+
+Employee Name: Priya Verma
+
+Basic Salary: 30000
+HRA: 8000
+Gross Salary: 40000
+
+Net Salary: 35000

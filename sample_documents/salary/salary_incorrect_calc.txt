@@ -1,0 +1,13 @@
+COMPANY: PQR Enterprises
+SALARY SLIP - For the month of January 2026
+
+Employee Name: Ankit Mehta
+Employee ID: EMP2045
+
+Basic Salary: 35000
+HRA: 9000
+Bonus: 4000
+Gross Salary: 50000
+
+Deductions: 6000
+Net Salary: 46000

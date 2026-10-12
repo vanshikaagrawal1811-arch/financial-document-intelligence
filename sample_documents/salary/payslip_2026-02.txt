@@ -1,0 +1,10 @@
+SALARY SLIP - For the month of February 2026
+Company: Northstar Components India Pvt Ltd
+Employee Name: Aditi Mehta
+Employee ID: EMP2048
+Basic Salary: 42000
+HRA: 14000
+Bonus: 4000
+Gross Salary: 60000
+Deductions: 8000
+Net Salary: 52000

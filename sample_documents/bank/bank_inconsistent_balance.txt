@@ -1,0 +1,11 @@
+BANK STATEMENT
+Account Holder: Priya Verma
+Account Number: XXXXXXXX5678
+Statement Period: 01-Jan-2026 to 31-Jan-2026
+Opening Balance: 15000
+
+Date | Description | Amount | Type | Balance
+01-Jan-2026 | Salary Credit - XYZ Solutions | 35000 | CREDIT | 50000
+04-Jan-2026 | Grocery Store Payment | 1000 | DEBIT | 47000
+07-Jan-2026 | Electricity Bill | 1500 | DEBIT | 44000
+11-Jan-2026 | Mobile Recharge | 500 | DEBIT | 40000

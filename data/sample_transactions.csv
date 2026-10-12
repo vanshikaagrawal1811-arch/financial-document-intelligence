@@ -1,0 +1,13 @@
+date,description,amount,type,balance
+01-Jan-2026,Salary Credit - ABC Technologies,48000,CREDIT,68000
+02-Jan-2026,Grocery Store Payment,1200,DEBIT,66800
+03-Jan-2026,Electricity Bill,2000,DEBIT,64800
+05-Jan-2026,Mobile Recharge,500,DEBIT,64300
+08-Jan-2026,Restaurant Payment,1500,DEBIT,62800
+10-Jan-2026,Online Shopping,3000,DEBIT,59800
+12-Jan-2026,ATM Withdrawal,2000,DEBIT,57800
+15-Jan-2026,Fuel Payment,1800,DEBIT,56000
+18-Jan-2026,Suspicious Large Transfer,500000,DEBIT,-444000
+20-Jan-2026,Grocery Store Payment,1300,DEBIT,-445300
+22-Jan-2026,Mobile Recharge,500,DEBIT,-445800
+25-Jan-2026,Restaurant Payment,1600,DEBIT,-447400

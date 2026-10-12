@@ -1,0 +1,26 @@
+BANK STATEMENT
+Account Holder: Aditi Mehta
+Account Number: XXXX XXXX 7812
+Statement Period: 01-Jan-2026 to 31-Mar-2026
+Opening Balance: 35000
+Date | Description | Amount | Type | Balance
+01-Jan-2026 | Salary Credit - Northstar Components | 52000 | CREDIT | 87000
+03-Jan-2026 | Rent Payment | 15000 | DEBIT | 72000
+06-Jan-2026 | Grocery Store | 2450 | DEBIT | 69550
+12-Jan-2026 | Electricity Bill | 1850 | DEBIT | 67700
+18-Jan-2026 | UPI Transfer | 3200 | DEBIT | 64500
+25-Jan-2026 | Online Shopping | 4100 | DEBIT | 60400
+01-Feb-2026 | Salary Credit - Northstar Components | 49000 | CREDIT | 109400
+03-Feb-2026 | Rent Payment | 15000 | DEBIT | 94400
+07-Feb-2026 | Grocery Store | 2750 | DEBIT | 91650
+12-Feb-2026 | Electricity Bill | 1920 | DEBIT | 89730
+16-Feb-2026 | UPI Transfer | 2800 | DEBIT | 86930
+23-Feb-2026 | ATM Cash Withdrawal | 18000 | DEBIT | 68930
+01-Mar-2026 | Salary Credit - Northstar Components | 52000 | CREDIT | 120930
+04-Mar-2026 | Rent Payment | 15000 | DEBIT | 105930
+08-Mar-2026 | Grocery Store | 2600 | DEBIT | 103330
+12-Mar-2026 | Electricity Bill | 1760 | DEBIT | 101570
+17-Mar-2026 | UPI Transfer | 3500 | DEBIT | 98070
+22-Mar-2026 | Medical Store | 1250 | DEBIT | 96820
+27-Mar-2026 | One-time Transfer | 76000 | CREDIT | 172820
+29-Mar-2026 | Online Shopping | 5200 | DEBIT | 167620
