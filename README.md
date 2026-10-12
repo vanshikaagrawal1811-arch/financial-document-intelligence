@@ -2,8 +2,6 @@
 
 An AI-assisted **personal-loan income verification prototype** for a fictional Indian retail bank. The application helps a loan-operations analyst compare a salaried applicant's payslips with salary-like credits in bank statements across multiple months, identify exceptions, and generate a verification report.
 
-> **Portfolio project:** This is a demonstration prototype, not a product deployed by a real bank. It does not approve or reject loans and cannot establish fraud. Use synthetic or properly authorized documents only.
-
 ## Business problem
 
 Loan-operations teams may need to inspect multiple payslips and bank-statement pages to assess whether declared monthly net salary is consistent with credits received. Manual checks can be time-consuming and inconsistencies may be overlooked. This project automates the initial extraction and comparison so a reviewer can focus on exceptions.
